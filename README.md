@@ -5,7 +5,7 @@ Getting and Cleaning Data Course Project
 This script is mean to process data collected from the accelerometers from the Samsung Galaxy S smartphone according to the requirement of Course Project.
 
 ## struncture of the original data
-If you want to run the script, make sure that the data is in your R workspace. The structure of directory should be like this:
+If you want to run the script, make sure that the data is in your R workspace. The structure of directory should be like this:  
 
 \\UCI HAR Dataset\\activity_labels.txt"  
 \\UCI HAR Dataset\\features.txt"  
@@ -18,7 +18,7 @@ If you want to run the script, make sure that the data is in your R workspace. T
 
 ## where to get the original data
 you can get the data from:
-https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip
+https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip  
 here is the codebook of this data:
 http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones
 
@@ -33,6 +33,6 @@ http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartpho
 the output has been saved in file "result.txt". A full description is available in the CodeBook
 
 ## The dataset includes the following files
-README.md
-codebook.txt:show information about the result.txt
+README.md  
+codebook.txt:show information about the result.txt  
 result.txt:a independent tidy data set with the average of each variable for each activity and each subject.
