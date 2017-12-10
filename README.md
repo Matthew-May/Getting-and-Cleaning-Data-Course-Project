@@ -7,14 +7,14 @@ This script is mean to process data collected from the accelerometers from the S
 ## struncture of the original data
 If you want to run the script, make sure that the data is in your R workspace. The structure of directory should be like this:
 
-\\UCI HAR Dataset\\activity_labels.txt"
-\\UCI HAR Dataset\\features.txt"
-\\UCI HAR Dataset\\test\\subject_test.txt"
-\\UCI HAR Dataset\\test\\X_test.txt"
-\\UCI HAR Dataset\\test\\y_test.txt"
-\\UCI HAR Dataset\\train\\subject_train.txt"
-\\UCI HAR Dataset\\train\\X_train.txt"
-\\UCI HAR Dataset\\train\\y_train.txt"
+\\UCI HAR Dataset\\activity_labels.txt"  
+\\UCI HAR Dataset\\features.txt"  
+\\UCI HAR Dataset\\test\\subject_test.txt"  
+\\UCI HAR Dataset\\test\\X_test.txt"  
+\\UCI HAR Dataset\\test\\y_test.txt"  
+\\UCI HAR Dataset\\train\\subject_train.txt"  
+\\UCI HAR Dataset\\train\\X_train.txt"  
+\\UCI HAR Dataset\\train\\y_train.txt"  
 
 ## where to get the original data
 you can get the data from:
