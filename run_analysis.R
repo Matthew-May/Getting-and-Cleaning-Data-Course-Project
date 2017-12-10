@@ -16,20 +16,20 @@ url_y_train="\\UCI HAR Dataset\\train\\y_train.txt"
 activity_labels=read.table(url_activity_labels)
 features=read.table(url_features)
 
-## test
+## load test
 subject_test=read.table(url_subject_test)
 x_test=read.table(url_x_test)
 y_test=read.table(url_y_test)
 
-## train
+## load train
 subject_train=read.table(url_subject_train)
 x_train=read.table(url_x_train)
 y_train=read.table(url_y_train)
 
 # Merges the training and the test sets to create one data set.
 subject=rbind(subject_train,subject_test)
-x=rbind(x_train,x_test)
 activity=rbind(y_train,y_test)
+x=rbind(x_train,x_test)
 
 # Appropriately labels the data set with descriptive variable names.
 names(subject)=c("subject")
