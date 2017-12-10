@@ -16,24 +16,24 @@ url_y_train="\\UCI HAR Dataset\\train\\y_train.txt"
 activity_labels=read.table(url_activity_labels)
 features=read.table(url_features)
 
-## load test
+## test
 subject_test=read.table(url_subject_test)
 x_test=read.table(url_x_test)
 y_test=read.table(url_y_test)
 
-## load train
+## train
 subject_train=read.table(url_subject_train)
 x_train=read.table(url_x_train)
 y_train=read.table(url_y_train)
 
 # Merges the training and the test sets to create one data set.
 subject=rbind(subject_train,subject_test)
-activity=rbind(y_train,y_test)
 x=rbind(x_train,x_test)
+activities=rbind(y_train,y_test)
 
 # Appropriately labels the data set with descriptive variable names.
 names(subject)=c("subject")
-names(activity)=c("activity")
+names(activities)=c("activity")
 names(x)=as.character(features$V2)
 
 # Extracts only the measurements on the mean and standard deviation 
@@ -45,12 +45,11 @@ x=x[,grep('(mean\\(\\))|(std\\(\\))',as.character(features$V2))]
 # Uses descriptive activity names to name the activities in the data set
 library(dplyr)
 
-# put "subject","activity" and "x" in one data set
-x=cbind(x,subject,activity)
+# put "subject","activities" and "x" in one data set
+x=cbind(x,subject,activities)
 
-# merge activity_name
-x=left_join(x,activity_labels,by = c("activity" = "V1"))
-x=rename(x,activity_name=V2)
+# change [activity] to descriptive text
+x=mutate(x,activity=activity_labels$V2[activity])
 
 # better name!
 names(x)=tolower(names(x))
@@ -59,5 +58,6 @@ names(x)=gsub("\\)","",names(x))
 
 # From the data set in step 4, creates a second, independent tidy data set 
 # with the average of each variable for each activity and each subject.
-result=aggregate(x[,1:66],by=list(x$subject,x$activity_name),mean)
+x=group_by(x,subject,activity)
+result=summarise_all(x,mean)
 write.table(x = result,"result.txt",row.name = FALSE)
