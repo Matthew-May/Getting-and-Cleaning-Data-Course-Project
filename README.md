@@ -1,5 +1,5 @@
 # Getting-and-Cleaning-Data-Course-Project
-Getting and Cleaning Data Course Project
+Human Activity Recognition Using Smartphones Dataset
 
 ## overview
 This script is mean to process data collected from the accelerometers from the Samsung Galaxy S smartphone according to the requirement of Course Project.
